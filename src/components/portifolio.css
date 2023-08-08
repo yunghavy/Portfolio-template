@@ -1,216 +1,301 @@
 /* Gallery */
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-gap: 10px;
-    Padding: 10px;
-  }
-  
-  @media screen and (max-width: 767px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 5px;
-    }
-  }
-  
-  .gallery__item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 10px;
+  Padding: 10px;
+}
 
-  
-  .gallery__item:hover {
-    transform: scale(1.05);
+@media screen and (max-width: 767px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
   }
 
   .tabs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 8px;
   }
-  
+
   .tabs button {
-    padding: 8px 32px;
-    margin: 0 5px;
-    font-size: 16px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    
-  }
-  .tabs button:hover {
-    color:#1ac2a0;
-  }
-  .tabs button.active {
-    color: #117964; /* Add your active tab color */
-  }
-  .gallery-page {
-    padding-top: 80px; 
-  }
-  
-  .gallery-content {
-    background-color: #ffffff; 
-    padding: 80px 0; 
-  }
-  
-  .gallery-content .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 8px 20px;
+    margin: 5px;
+    font-size: 14px;
   }
 
-  /* END OF GALLERY */
-  /* VISUALS */
+  .tabs-container {
+    margin-bottom: 15px;
+  }
+}
+
+.gallery__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.gallery__item:hover {
+  transform: scale(1.05);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.tabs button {
+  padding: 8px 32px;
+  margin: 0 5px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.tabs button:hover {
+  color: #1ac2a0;
+}
+
+.tabs button.active {
+  color: #117964;
+}
+
+.gallery-page {
+  padding-top: 80px;
+}
+
+.gallery-content {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.gallery-content .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  overflow: auto;
+}
+
+.lightbox-content {
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* END OF GALLERY */
+/* VISUALS */
+.visuals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 10px;
+  Padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
   .visuals {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-gap: 10px;
-    Padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
   }
-  
-  @media screen and (max-width: 767px) {
-    .visuals {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 5px;
-    }
-  }
-  
-  .visuals__item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  
-  .visuals__item:hover {
-    transform: scale(1.05);
-    
-  }
-  
   .tabs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 8px;
   }
-  
+
   .tabs button {
-    padding: 8px 32px;
-    margin: 0 5px;
-    font-size: 16px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    
+    padding: 8px 20px;
+    margin: 5px;
+    font-size: 14px;
   }
-  .tabs button:hover {
-    color:#1ac2a0;
+
+  .tabs-container {
+    margin-bottom: 15px;
   }
-  .tabs button.active {
-    color: #117964; 
-  }
-  .visuals-page {
-    padding-top: 80px; 
-  }
-  
-  .visuals-content {
-    background-color: #ffffff; 
-    padding: 80px 0; 
-  }
-  
-  .visuals-content .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-/*END OF VISUALS */  
+}
+
+.visuals__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.visuals__item:hover {
+  transform: scale(1.05);
+
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.tabs button {
+  padding: 8px 32px;
+  margin: 0 5px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.tabs button:hover {
+  color: #1ac2a0;
+}
+
+.tabs button.active {
+  color: #117964;
+}
+
+.visuals-page {
+  padding-top: 80px;
+}
+
+.visuals-content {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.visuals-content .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*END OF VISUALS */
 
 /* Designs */
 .designs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-gap: 10px;
-    Padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 10px;
+  Padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .designs {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
   }
-  
-  @media screen and (max-width: 767px) {
-    .designs {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 5px;
-    }
-  }
-  
-  .designs__item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  
-  .designs__item:hover {
-    transform: scale(1.05);
-    
-  }
-  .designs-page {
-    padding-top: 80px; 
-  }
-  
-  .designs-content {
-    background-color: #ffffff; 
-    padding: 80px 0; 
-  }
-  
-  .designs-content .container {
+  .tabs {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 8px;
   }
+
+  .tabs button {
+    padding: 8px 20px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .tabs-container {
+    margin-bottom: 15px;
+  }
+}
+
+.designs__item {
+  width: auto;
+  height: auto;
+  /*width: 100%;
+  height: 100%;
+  object-fit: cover;*/
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.designs__item:hover {
+  transform: scale(1.05);
+
+}
+
+.designs-page {
+  padding-top: 80px;
+}
+
+.designs-content {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.designs-content .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 /* Dev */
 .dev {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-gap: 10px;
-    Padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 10px;
+  Padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .dev {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
   }
-  
-  @media screen and (max-width: 767px) {
-    .dev {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 5px;
-    }
-  }
-  
-  .dev__item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  
-  .dev__item:hover {
-    transform: scale(1.05);
-    
-  }
-  .dev-page {
-    padding-top: 80px; 
-  }
-  
-  .dev-content {
-    background-color: #ffffff; 
-    padding: 80px 0; 
-  }
-  
-  .dev-content .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+}
+
+.dev__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.dev__item:hover {
+  transform: scale(1.05);
+
+}
+
+.dev-page {
+  padding-top: 80px;
+}
+
+.dev-content {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.dev-content .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

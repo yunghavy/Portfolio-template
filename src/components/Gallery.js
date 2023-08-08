@@ -3,12 +3,14 @@ import './portifolio.css';
 
 function Gallery() {
   const [activeTab, setActiveTab] = useState('portraits');
+  const [selectedImage, setSelectedImage] = useState(null);
   
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    setSelectedImage(null);
   };
   
-  const images = [
+  const prime = [
     { src: 'images/portraits/t1.jpg', alt: 'Image 1' },
     { src: 'images/portraits/t2.jpg', alt: 'Image 2' },
     { src: 'images/portraits/t3.jpg', alt: 'Image 3' },
@@ -22,7 +24,7 @@ function Gallery() {
     { src: 'images/portraits/t11.jpg', alt: 'Image 11' },
     { src: 'images/portraits/t12.jpg', alt: 'Image 12' }
   ]
-  const photos = [
+  const kit = [
     { src: 'images/photos/w1.jpg', alt: 'Image 1' },
     { src: 'images/photos/w16.jpg', alt: 'Image 2' },
     { src: 'images/photos/w3.jpg', alt: 'Image 3' },
@@ -64,24 +66,40 @@ function Gallery() {
     { src: 'images/places/p11.jpg', alt: 'Image 11' },
     { src: 'images/places/p12.jpg', alt: 'Image 12' }
   ]
+  function Lightbox({ image, onClose }) {
+    return (
+      <div className="lightbox-overlay" onClick={onClose}>
+        <div className="lightbox-content">
+          <img src={image.src} alt={image.alt} />
+        </div>
+      </div>
+    );
+  }
+  const openLightbox = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div>
    <div className="gallery-page">
       <div className="gallery-content">
         <div className="container">
-    <div className="tabs">
+    <div className="tabs tabs-container">
       <button
-        className={activeTab === 'portraits' ? 'active' : ''}
-        onClick={() => handleTabClick('portraits')}
+        className={activeTab === 'prime' ? 'active' : ''}
+        onClick={() => handleTabClick('prime')}
       >
-        Portraits
+        Prime-Portraits
       </button>
       <button
-        className={activeTab === 'photos' ? 'active' : ''}
-        onClick={() => handleTabClick('photos')}
+        className={activeTab === 'kit' ? 'active' : ''}
+        onClick={() => handleTabClick('kit')}
       >
-        Beautiful Faces
+        Kit-Portraits
       </button>
       <button
         className={activeTab === 'events' ? 'active' : ''}
@@ -99,22 +117,24 @@ function Gallery() {
     </div>
 
     <div className="gallery">
-      {activeTab === 'portraits' &&
-        images.map((image, index) => (
+      {activeTab === 'prime' &&
+        prime.map((image, index) => (
           <img
             key={index}
             className="gallery__item"
             src={image.src}
             alt={image.alt}
+            onClick={() => openLightbox(image)}
           />
         ))}
-      {activeTab === 'photos' &&
-        photos.map((image, index) => (
+      {activeTab === 'kit' &&
+        kit.map((image, index) => (
           <img
             key={index}
             className="gallery__item"
             src={image.src}
             alt={image.alt}
+            onClick={() => openLightbox(image)}
           />
         ))}
       {activeTab === 'events' &&
@@ -124,6 +144,7 @@ function Gallery() {
             className="gallery__item"
             src={image.src}
             alt={image.alt}
+            onClick={() => openLightbox(image)}
           />
         ))}
       {activeTab === 'places' &&
@@ -133,10 +154,14 @@ function Gallery() {
             className="gallery__item"
             src={image.src}
             alt={image.alt}
+            onClick={() => openLightbox(image)}
           />
         ))}
     </div>
   </div>
+  {selectedImage && (
+          <Lightbox image={selectedImage} onClose={closeLightbox} />
+        )}
   </div>
   </div>
 );
