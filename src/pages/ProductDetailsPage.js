@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useParams, useNavigate } from 'react-router-dom';
-import categories from './data';
-import CartPopup from './CartPopup';
+import categories from '../components/data';
+import CartPopup from '../components/CartPopup';
 import { CartContext } from '../CartContext';
 
 const ProductDetailsPage = () => {

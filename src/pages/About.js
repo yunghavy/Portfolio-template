@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './about.css';
 import { BiCamera, BiFilm, BiPaint, BiBrush, BiBracket, BiPencil } from 'react-icons/bi';
-import Testimonials from './Testimonials';
+import Testimonials from '../components/Testimonials';
 
 
 const About = () => {

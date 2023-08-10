@@ -4,8 +4,8 @@ import Slider from 'react-slick';
 import './store.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Navbar from './Navbar';
-import categories from './data';
+import Navbar from '../components/Navbar';
+import categories from '../components/data';
 import ProductDetailsPage from './ProductDetailsPage';
 
 const HavyStore = () => {
