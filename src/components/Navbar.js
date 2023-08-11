@@ -35,7 +35,7 @@ const Navbar = () => {
           </li>
           <li><NavLink to="/havystore" activeclassname="active">Store</NavLink></li>
           <li><NavLink to="/contact" activeclassname="active">Contact</NavLink></li>
-          <li><NavLink to="/admin" activeclassname="active">admin</NavLink></li>
+          {/* <li><NavLink to="/admin" activeclassname="active">admin</NavLink></li> */}
           <li> 
         </li>
         </ul>
