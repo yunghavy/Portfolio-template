@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { Container } from '@mui/material';
-import AdminPanel from './admin/AdminPanel';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -19,7 +18,6 @@ function App() {
     <div>
       <header>
         <Routes>
-          <Route path="/admin/*" element={null} />
           <Route path="/*" element={<Navbar />} />
         </Routes>
       </header>
@@ -36,7 +34,6 @@ function App() {
             <Route exact path="/havystore" element={<HavyStore />} />
             <Route exact path="/product/:id" element={<ProductDetailsPage />} />
             <Route exact path="/contact" element={<Contact />} />
-            <Route path="/admin/*" element={<AdminPanel />} />
           </Routes>
         {/* </Container> */}
       </main>
